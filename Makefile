@@ -12,7 +12,7 @@ test:
 
 	PYTHONPATH=. py.test --verbose -s
 docker_build:
-	docker build -t hello-world-printer .
+	docker build -t hello-world-printer-k6 .
 docker_run: docker_build
 	docker run \
 		--name hello-world-printer-dev \
@@ -20,7 +20,7 @@ docker_run: docker_build
 	-d hello-world-printer
 	USERNAME=Sopelllo
 
-TAG=$(USERNAME)/hello-world-printer-k6	
+TAG=$(USERNAME)/hello-world-printer-k6
 
 docker_push: docker_build
 	@docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \  
