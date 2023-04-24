@@ -9,13 +9,13 @@ run:
 test:
 	PYTHONPATH=. py.test --verbose -s
 docker_build:
-	docker build -t hello_world-printer-k6 .
+	docker build -t hello-world-printer-k6 .
+	docker build -t hello-world-printer-k6 .
 docker_run: docker_build
 	docker run \
-	--name hello_world-printer-k6 \
+	--name hello-world-printer-dev \
 	-p 5000:5000 \
-	-d hello_world-printer-k6
-
+	-d hello-world-printer-k6
 USERNAME=Sopelllo
 TAG=$(USERNAME)/hello_world-printer-k6 
 
